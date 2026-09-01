@@ -1,0 +1,378 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Merriweather:wght@400;700&display=swap');
+
+/* ---------- CSS Variables / Color Schema ---------- */
+:root {
+    /* Primary Colors */
+    --primary-dark: #1a3a5c;
+    --primary-medium: #2c5f8a;
+    --primary-light: #4a8bb7;
+
+    /* Accent Colors */
+    --accent-gold: #c9a84c;
+    --accent-gold-light: #e8d5a3;
+
+    /* Neutral Colors */
+    --text-dark: #2c2c2c;
+    --text-light: #f8f9fa;
+    --background-light: #f0f2f5;
+    --white: #ffffff;
+    --shadow: rgba(0, 0, 0, 0.15);
+
+    /* Typography */
+    --font-heading: 'Merriweather', serif;
+    --font-body: 'Roboto', sans-serif;
+}
+
+/* ---------- Reset & Base Styles ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--background-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* ---------- Header Styles ---------- */
+header {
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary-medium));
+    color: var(--text-light);
+    padding: 1.5rem 2rem;
+    box-shadow: 0 4px 12px var(--shadow);
+}
+
+header h1 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+header h1 span {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 300;
+    color: var(--accent-gold-light);
+    letter-spacing: 2px;
+    margin-top: 0.25rem;
+}
+
+/* ---------- Navigation Styles ---------- */
+nav {
+    margin-top: 1.25rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+nav li {
+    display: inline;
+}
+
+nav a {
+    display: block;
+    padding: 0.6rem 1.5rem;
+    color: var(--text-light);
+    text-decoration: none;
+    font-family: var(--font-body);
+    font-weight: 400;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid transparent;
+}
+
+/* Hover Effect */
+nav a:hover {
+    background-color: var(--accent-gold);
+    color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(201, 168, 76, 0.4);
+    border-color: var(--accent-gold);
+}
+
+nav a:active {
+    transform: translateY(0);
+}
+
+/* ---------- Main Layout ---------- */
+body h1 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+
+/* ---------- Card Styles ---------- */
+.card {
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px var(--shadow);
+    padding: 1.75rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+}
+
+.card h2 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--primary-dark);
+    border-bottom: 3px solid var(--accent-gold);
+    padding-bottom: 0.6rem;
+    margin-bottom: 1.25rem;
+}
+
+/* ---------- About Me Section ---------- */
+.card:first-of-type h2 {
+    text-align: center;
+}
+
+.card:first-of-type img {
+    float: right;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 0 0.75rem 1.25rem;
+    border: 3px solid var(--primary-light);
+    box-shadow: 0 2px 8px var(--shadow);
+}
+
+.card:first-of-type p {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+.card:first-of-type h3 {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    color: var(--primary-medium);
+    border-bottom: 2px dashed var(--accent-gold-light);
+    padding-bottom: 0.4rem;
+    margin: 1.5rem 0 1rem 0;
+    text-align: center;
+}
+
+/* Flag Image */
+.card:first-of-type .flag-img {
+    float: left;
+    width: 80px;
+    height: 60px;
+    object-fit: cover;
+    margin: 0.25rem 1.25rem 0.75rem 0;
+    border: 2px solid var(--primary-light);
+    border-radius: 4px;
+}
+
+/* Clearfix for floated images */
+.card:first-of-type::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+/* ---------- Web Dev Resources Section ---------- */
+.card:last-of-type ul {
+    list-style: none;
+    padding: 0;
+}
+
+.card:last-of-type li {
+    margin-bottom: 0.75rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.75rem;
+}
+
+.card:last-of-type li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.card:last-of-type a {
+    display: block;
+    padding: 0.5rem 0.75rem;
+    color: var(--primary-medium);
+    text-decoration: none;
+    font-weight: 400;
+    border-radius: 6px;
+    transition: all 0.25s ease;
+    position: relative;
+    padding-left: 1.75rem;
+}
+
+.card:last-of-type a::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--accent-gold);
+    font-weight: 700;
+    transition: transform 0.25s ease;
+}
+
+.card:last-of-type a:hover {
+    background-color: var(--accent-gold-light);
+    color: var(--primary-dark);
+    padding-left: 2.25rem;
+}
+
+.card:last-of-type a:hover::before {
+    transform: translateX(4px);
+    color: var(--primary-dark);
+}
+
+/* ---------- Footer Styles ---------- */
+footer {
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary-medium));
+    color: var(--text-light);
+    text-align: center;
+    padding: 2rem 1.5rem;
+    margin-top: 2rem;
+    border-top: 4px solid var(--accent-gold);
+}
+
+footer p:first-of-type {
+    font-size: 1.1rem;
+    font-weight: 700;
+    font-family: var(--font-heading);
+    letter-spacing: 1px;
+}
+
+footer p:last-of-type {
+    margin-top: 0.5rem;
+    font-weight: 300;
+    font-size: 0.95rem;
+    color: var(--accent-gold-light);
+}
+
+footer p:last-of-type span {
+    display: inline-block;
+    margin: 0 0.5rem;
+}
+
+/* ---------- Responsive Design ---------- */
+/* Tablet & Smaller Screens */
+@media (max-width: 900px) {
+    main {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+
+    header h1 {
+        font-size: 1.6rem;
+    }
+
+    header h1 span {
+        font-size: 0.6rem;
+    }
+}
+
+/* Mobile Phones */
+@media (max-width: 600px) {
+    header {
+        padding: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    nav a {
+        width: 100%;
+        text-align: center;
+        padding: 0.5rem;
+        border-radius: 8px;
+    }
+
+    .card:first-of-type img {
+        float: none;
+        display: block;
+        margin: 0 auto 1rem auto;
+        width: 100px;
+        height: 100px;
+    }
+
+    .card:first-of-type .flag-img {
+        float: none;
+        display: block;
+        margin: 0 auto 1rem auto;
+        width: 120px;
+        height: auto;
+    }
+
+    .card {
+        padding: 1.25rem;
+    }
+
+    main {
+        padding: 0 0.75rem;
+        margin: 1rem auto;
+    }
+
+    footer p:first-of-type {
+        font-size: 0.95rem;
+    }
+
+    footer p:last-of-type {
+        font-size: 0.85rem;
+    }
+}
+
+/* ---------- Print Styles ---------- */
+@media print {
+    header {
+        background: white !important;
+        color: black !important;
+        box-shadow: none !important;
+    }
+
+    nav {
+        display: none !important;
+    }
+
+    .card {
+        box-shadow: none !important;
+        border: 1px solid #ccc;
+        break-inside: avoid;
+    }
+
+    footer {
+        background: white !important;
+        color: black !important;
+        border-top: 2px solid #ccc;
+    }
+}
