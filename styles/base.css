@@ -1,44 +1,98 @@
+/* ========================================
+   BASE.CSS - My Personal Page Styles!
+   WDD 131 - Dynamic Web Fundamentals
+   Student: Colebay Kaps Kamanda
+   📅 Date: September 2026
+   ======================================== */
 
-/* ---------- CSS Variables / Color Schema ---------- */
+/* ----------------------------------------
+   🌟 COLOR SCHEME: Sunset/Autumn Theme
+   I chose warm colors inspired by sunsets!
+   - Deep purple for headers (twilight sky)
+   - Warm orange for accents (sunset glow)
+   - Cream background (warm and inviting)
+   ======================================== */
+
+/* ---------- CSS VARIABLES / Color Schema ---------- */
 :root {
-    /* Primary Colors */
-    --primary-dark: #1a3a5c;
-    --primary-medium: #2c5f8a;
-    --primary-light: #4a8bb7;
+    /* 🌅 PRIMARY COLORS - Sunset vibes */
+    --primary-dark: #2D1B4E;
+    /* Deep purple - like evening sky */
+    --primary-medium: #6B3F8A;
+    /* Medium purple - my accent color */
+    --primary-light: #9B6BB5;
+    /* Light purple - for subtle elements */
 
-    /* Accent Colors */
-    --accent-gold: #c9a84c;
-    --accent-gold-light: #e8d5a3;
+    /* 🍂 ACCENT COLORS - Warm autumn colors */
+    --accent-orange: #E8845A;
+    /* Warm orange - like sunset! */
+    --accent-orange-light: #F5C9B0;
+    /* Light peach - soft and friendly */
+    --accent-gold: #D4A373;
+    /* Golden - for highlights */
+    --accent-gold-light: #F0E2D0;
+    /* Light gold - for backgrounds */
 
-    /* Neutral Colors */
-    --text-dark: #2c2c2c;
-    --text-light: #f8f9fa;
-    --background-light: #f0f2f5;
-    --white: #ffffff;
-    --shadow: rgba(0, 0, 0, 0.15);
+    /* 🌿 NEUTRAL COLORS */
+    --text-dark: #2C2C2C;
+    /* Almost black - easy to read */
+    --text-medium: #5A5A5A;
+    /* Medium gray - for less important text */
+    --text-light: #F8F9FA;
+    /* White - for dark backgrounds */
+    --background-cream: #FFF8F0;
+    /* Cream - warm page background */
+    --white: #FFFFFF;
+    /* Pure white - for cards */
+    --shadow: rgba(45, 27, 78, 0.15);
+    /* Purple-tinted shadow */
 
-    /* Typography */
+    /* 📝 TYPOGRAPHY - I love these fonts! */
     --font-heading: 'Merriweather', serif;
+    /* Fancy serif for headings */
     --font-body: 'Roboto', sans-serif;
+    /* Clean sans-serif for reading */
 }
 
-/* ---------- Reset & Base Styles ---------- */
+/* ---------- RESET & BASE STYLES ---------- */
+/* 
+   🤔 I learned: Every browser has default styles.
+   This "reset" helps me start from zero!
+   The * means "select everything" - it's a wildcard!
+*/
 * {
     margin: 0;
+    /* Remove default margins */
     padding: 0;
+    /* Remove default padding */
     box-sizing: border-box;
+    /* Makes sizing easier to understand */
 }
 
+/* 
+   👤 BODY - This is my page's main container!
+   Everything inside the body uses these styles.
+*/
 body {
     font-family: var(--font-body);
-    background-color: var(--background-light);
+    /* Use Roboto font */
+    background-color: var(--background-cream);
+    /* Warm cream background */
     color: var(--text-dark);
+    /* Dark text for readability */
     line-height: 1.6;
+    /* Space between lines - easier to read */
 }
 
-/* ---------- Header Styles ---------- */
+/* ---------- HEADER STYLES ---------- */
+/* 
+   🏠 HEADER - The top of my page!
+   I used a gradient here - it's like a color transition!
+   I learned this from watching YouTube tutorials!
+*/
 header {
     background: linear-gradient(135deg, var(--primary-dark), var(--primary-medium));
+    /* ↑ Gradient from dark purple to medium purple */
     color: var(--text-light);
     padding: 1.5rem 2rem;
     box-shadow: 0 4px 12px var(--shadow);
@@ -46,88 +100,161 @@ header {
 
 header h1 {
     font-family: var(--font-heading);
+    /* Merriweather for fancy headings */
     font-size: 2rem;
     font-weight: 700;
+    /* Bold! */
     text-align: center;
     letter-spacing: 1px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    /* ↑ Shadow makes text pop! */
 }
 
+/* 
+   📝 I learned about SPAN!
+   Span is an inline element, but I can make it block-level
+   using display: block. This makes it sit on its own line!
+*/
 header h1 span {
     display: block;
+    /* Make it a block element */
     font-size: 0.7rem;
     font-weight: 300;
-    color: var(--accent-gold-light);
+    /* Light weight - looks elegant */
+    color: var(--accent-orange-light);
+    /* Peach color - pretty! */
     letter-spacing: 2px;
     margin-top: 0.25rem;
 }
 
-/* ---------- Navigation Styles ---------- */
+/* ---------- NAVIGATION STYLES ---------- */
+/* 
+   🧭 NAVIGATION - This is my menu!
+   I'm using FLEXBOX here - it's like magic for layout!
+   Flexbox makes items line up in a row or column.
+*/
 nav {
     margin-top: 1.25rem;
     display: flex;
+    /* Here's the flexbox! */
     justify-content: center;
+    /* Center everything */
     gap: 0.5rem;
+    /* Space between items */
     flex-wrap: wrap;
+    /* If screen is small, wrap to next line */
 }
 
 nav ul {
     display: flex;
+    /* Another flexbox! */
     list-style: none;
-    gap: 0.5rem;
+    /* Remove bullet points */
+    gap: 5rem;
     flex-wrap: wrap;
+    justify-content: center;
+    /* Center the list items */
 }
 
 nav li {
     display: inline;
+    /* Make list items sit in a row */
 }
 
+/* 
+   🎯 NAV LINKS - These are my buttons!
+   I wanted them to look like pills, so I used border-radius: 30px.
+   The transition makes them animate smoothly on hover!
+*/
 nav a {
     display: block;
+    /* Make the whole area clickable */
     padding: 0.6rem 1.5rem;
     color: var(--text-light);
     text-decoration: none;
+    /* Remove underline */
     font-family: var(--font-body);
     font-weight: 400;
     border-radius: 30px;
+    /* Pill shape! */
     transition: all 0.3s ease;
+    /* Smooth animation */
     background-color: rgba(255, 255, 255, 0.08);
+    /* Semi-transparent */
     border: 1px solid transparent;
 }
 
-/* Hover Effect */
+/* 
+   ✨ HOVER EFFECT - This is what happens when you mouse over!
+   I'm so proud of this - it looks professional!
+*/
 nav a:hover {
-    background-color: var(--accent-gold);
-    color: var(--primary-dark);
+    background-color: var(--accent-orange);
+    /* Orange background! */
+    color: var(--text-dark);
+    /* Dark text for contrast */
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(201, 168, 76, 0.4);
-    border-color: var(--accent-gold);
+    /* Moves up a tiny bit */
+    box-shadow: 0 6px 20px rgba(232, 132, 90, 0.4);
+    /* Orange glow! */
+    border-color: var(--accent-orange);
 }
 
+/* 
+   👆 ACTIVE STATE - When you click the link
+   It bounces back down to show you clicked it!
+*/
 nav a:active {
     transform: translateY(0);
+    /* Go back to normal position */
 }
 
-/* ---------- Main Layout ---------- */
-h1 {
-    font-family: var(--font-heading);
-    font-size: 2rem;
-    font-weight: 700;
+/* ---------- ARTICLE STYLES ---------- */
+/* 
+   📰 ARTICLE - I added an article for my name!
+   This is the "hero" section with my name.
+*/
+article {
     text-align: center;
-    letter-spacing: 1px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
+article h1 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    color: var(--primary-dark);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    letter-spacing: 2px;
+}
+
+/* ---------- MAIN LAYOUT ---------- */
+/* 
+   📐 CSS GRID - This is the most exciting part!
+   I'm using Grid to create columns.
+   grid-template-columns: 2fr 1fr means:
+   - First column takes up 2 parts
+   - Second column takes up 1 part
+   So the main content is twice as wide as the sidebar!
+*/
 main {
     max-width: 1200px;
-    margin: 2rem auto;
+    /* Don't get too wide */
+    margin: 0 auto 2rem auto;
+    /* Center horizontally */
     padding: 0 1.5rem;
     display: grid;
+    /* ACTIVATE GRID! */
     grid-template-columns: 2fr 1fr;
+    /* 2:1 ratio */
     gap: 2rem;
+    /* Space between columns */
 }
 
-/* ---------- Card Styles ---------- */
+/* ---------- CARD STYLES ---------- */
+/* 
+   🃏 CARDS - These are like little containers!
+   I learned that shadows make things look like they float.
+   The hover effect makes the card lift up - so interactive!
+*/
 .card {
     background: var(--white);
     border-radius: 12px;
@@ -138,31 +265,46 @@ main {
 
 .card:hover {
     transform: translateY(-4px);
+    /* Lift up */
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+    /* Bigger shadow */
 }
 
 .card h2 {
     font-family: var(--font-heading);
     font-size: 1.5rem;
     color: var(--primary-dark);
-    border-bottom: 3px solid var(--accent-gold);
+    border-bottom: 3px solid var(--accent-orange);
+    /* Orange underline! */
     padding-bottom: 0.6rem;
     margin-bottom: 1.25rem;
 }
 
-/* ---------- About Me Section ---------- */
+/* ---------- ABOUT ME SECTION ---------- */
+/* 
+   👤 ABOUT ME - This is my personal section!
+   I used floats for the images - I learned about clearfix too!
+*/
+
+/* Center the heading in the first card */
 .card:first-of-type h2 {
     text-align: center;
 }
 
-.card:first-of-type img {
+/* 
+   🖼️ PROFILE IMAGE - My photo!
+   I used border-radius: 50% to make it circular!
+   float: right makes text wrap around it.
+*/
+.card:first-of-type img:first-of-type {
     float: right;
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
+    width: 200px;
+    height: 150px;
     object-fit: cover;
+    /* Don't stretch the image */
     margin: 0 0 0.75rem 1.25rem;
-    border: 3px solid var(--primary-light);
+    border: 1px solid var(--primary-light);
+    /* Purple border */
     box-shadow: 0 2px 8px var(--shadow);
 }
 
@@ -170,8 +312,13 @@ main {
     font-size: 0.95rem;
     margin-bottom: 1rem;
     text-align: justify;
+    /* Nice even edges */
 }
 
+/* 
+   🌍 COUNTRY HEADING - For my country section
+   I used dashed border-bottom - looks different and interesting!
+*/
 .card:first-of-type h3 {
     font-family: var(--font-heading);
     font-size: 1.2rem;
@@ -180,44 +327,79 @@ main {
     padding-bottom: 0.4rem;
     margin: 1.5rem 0 1rem 0;
     text-align: center;
+    clear: both;
+    /* Make sure it clears the floated image */
 }
 
-/* Flag Image */
-.card:first-of-type .flag-img {
+/* 
+   🏳️ FLAG IMAGE - My country's flag!
+   float: left makes text wrap around it on the left side.
+*/
+.card:first-of-type img:last-of-type {
     float: left;
-    width: 80px;
-    height: 60px;
+    width: 200px;
+    height: 150px;
     object-fit: cover;
     margin: 0.25rem 1.25rem 0.75rem 0;
-    border: 2px solid var(--primary-light);
-    border-radius: 4px;
+    border: 1px solid var(--primary-light);
 }
 
-/* Clearfix for floated images */
+/* 
+   🧹 CLEARFIX - This is important!
+   When I use floats, the container collapses.
+   The ::after pseudo-element adds content after the element.
+   display: table and clear: both fix the float issue!
+*/
 .card:first-of-type::after {
     content: '';
     display: table;
     clear: both;
 }
 
-/* ---------- Web Dev Resources Section ---------- */
+/* Fix paragraph after floated flag */
+.card:first-of-type p:last-of-type {
+    clear: none;
+    /* Let it wrap naturally */
+}
+
+/* ---------- WEB DEV RESOURCES SECTION ---------- */
+/* 
+   🔗 RESOURCES - Links to helpful websites!
+   I used pseudo-elements (::before) to add arrows!
+   This is advanced CSS and I'm proud I figured it out!
+*/
+
+/* Fix for the second card - it had li without ul */
 .card:last-of-type ul {
     list-style: none;
     padding: 0;
 }
 
+/* 
+   ⚠️ I learned: The HTML had <li> directly inside <section>
+   without a <ul> wrapper! I fixed it in the HTML, but I'm
+   styling both ways just in case.
+*/
 .card:last-of-type li {
     margin-bottom: 0.75rem;
     border-bottom: 1px solid #eee;
     padding-bottom: 0.75rem;
+    list-style: none;
+    /* Remove bullet points */
 }
 
 .card:last-of-type li:last-child {
     border-bottom: none;
+    /* No line on the last item */
     margin-bottom: 0;
     padding-bottom: 0;
 }
 
+/* 
+   ➡️ LINK STYLES - With arrow icon!
+   ::before adds content BEFORE the link text.
+   I used ▸ (a triangle) as my arrow.
+*/
 .card:last-of-type a {
     display: block;
     padding: 0.5rem 0.75rem;
@@ -228,36 +410,49 @@ main {
     transition: all 0.25s ease;
     position: relative;
     padding-left: 1.75rem;
+    /* Space for the arrow */
 }
 
+/* The arrow icon */
 .card:last-of-type a::before {
     content: '▸';
+    /* The arrow symbol */
     position: absolute;
     left: 0;
-    color: var(--accent-gold);
+    color: var(--accent-orange);
+    /* Orange arrow! */
     font-weight: 700;
     transition: transform 0.25s ease;
 }
 
+/* When you hover, the link slides right and arrow moves! */
 .card:last-of-type a:hover {
     background-color: var(--accent-gold-light);
     color: var(--primary-dark);
     padding-left: 2.25rem;
+    /* Move text right */
 }
 
 .card:last-of-type a:hover::before {
     transform: translateX(4px);
+    /* Arrow moves right too! */
     color: var(--primary-dark);
 }
 
-/* ---------- Footer Styles ---------- */
+/* ---------- FOOTER STYLES ---------- */
+/* 
+   👣 FOOTER - The bottom of my page!
+   I matched it with the header for consistency.
+*/
+
 footer {
     background: linear-gradient(135deg, var(--primary-dark), var(--primary-medium));
     color: var(--text-light);
     text-align: center;
     padding: 2rem 1.5rem;
     margin-top: 2rem;
-    border-top: 4px solid var(--accent-gold);
+    border-top: 4px solid var(--accent-orange);
+    /* Orange accent! */
 }
 
 footer p:first-of-type {
@@ -279,52 +474,78 @@ footer p:last-of-type span {
     margin: 0 0.5rem;
 }
 
-/* ---------- Responsive Design ---------- */
-/* Tablet & Smaller Screens */
+/* ---------- RESPONSIVE DESIGN ---------- */
+/* 
+   📱 RESPONSIVE - This makes my page work on phones too!
+   I use @media queries - they're like "if" statements for CSS!
+   "max-width: 900px" means "if the screen is smaller than 900px"
+*/
+
+/* For tablets and smaller screens */
 @media (max-width: 900px) {
     main {
         grid-template-columns: 1fr;
+        /* One column instead of two! */
         gap: 1.5rem;
         padding: 0 1rem;
     }
 
     header h1 {
         font-size: 1.6rem;
+        /* Smaller text on tablets */
     }
 
     header h1 span {
         font-size: 0.6rem;
     }
+
+    article h1 {
+        font-size: 2rem;
+    }
 }
 
-/* Mobile Phones */
+/* For phones (smallest screens) */
 @media (max-width: 600px) {
     header {
         padding: 1rem;
     }
 
+    /* 
+       📱 MOBILE NAV - Stack links vertically!
+       flex-direction: column makes them stack top to bottom.
+    */
     nav ul {
         flex-direction: column;
+        /* Stack vertically */
         align-items: center;
         width: 100%;
     }
 
     nav a {
         width: 100%;
+        /* Full width buttons */
         text-align: center;
         padding: 0.5rem;
         border-radius: 8px;
+        /* Less round on small screens */
     }
 
-    .card:first-of-type img {
+    /* 
+       📱 MOBILE IMAGES - Don't float on small screens!
+       float: none removes the floating behavior.
+       display: block makes them sit on their own line.
+       margin: 0 auto centers them!
+    */
+    .card:first-of-type img:first-of-type {
         float: none;
         display: block;
         margin: 0 auto 1rem auto;
+        /* Center the image */
         width: 100px;
         height: 100px;
     }
 
-    .card:first-of-type .flag-img {
+    .card:first-of-type img:last-of-type {
         float: none;
         display: block;
         margin: 0 auto 1rem auto;
@@ -338,7 +559,16 @@ footer p:last-of-type span {
 
     main {
         padding: 0 0.75rem;
-        margin: 1rem auto;
+        margin: 0 auto 1rem auto;
+    }
+
+    article {
+        padding: 0.5rem 0;
+        margin: 0.5rem 0.75rem 0 0.75rem;
+    }
+
+    article h1 {
+        font-size: 1.5rem;
     }
 
     footer p:first-of-type {
@@ -350,22 +580,60 @@ footer p:last-of-type span {
     }
 }
 
-/* ---------- Print Styles ---------- */
+/* For very small phones (under 400px) */
+@media (max-width: 400px) {
+    header h1 {
+        font-size: 1.2rem;
+    }
+
+    .card:first-of-type p {
+        font-size: 0.85rem;
+    }
+
+    .card:last-of-type a {
+        font-size: 0.85rem;
+        padding: 0.4rem 0.5rem 0.4rem 1.5rem;
+    }
+}
+
+/* ---------- PRINT STYLES ---------- */
+/* 
+   🖨️ PRINT - How the page looks when printed!
+   I never knew you could style print versions!
+   !important overrides other styles for printing.
+*/
+
 @media print {
     header {
         background: white !important;
+        /* Remove gradient for printing */
         color: black !important;
         box-shadow: none !important;
     }
 
     nav {
         display: none !important;
+        /* Don't show navigation */
+    }
+
+    article {
+        box-shadow: none !important;
+        border-bottom: 2px solid #ccc;
+        margin-bottom: 1rem;
     }
 
     .card {
         box-shadow: none !important;
         border: 1px solid #ccc;
+        /* Simple border instead of shadow */
         break-inside: avoid;
+        /* Don't split cards across pages */
+    }
+
+    .card:hover {
+        transform: none !important;
+        /* No hover effects in print */
+        box-shadow: none !important;
     }
 
     footer {
