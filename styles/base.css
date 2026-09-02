@@ -98,35 +98,19 @@ header {
     box-shadow: 0 4px 12px var(--shadow);
 }
 
-header h1 {
+#course-title {
     font-family: var(--font-heading);
     /* Merriweather for fancy headings */
     font-size: 2rem;
     font-weight: 700;
     /* Bold! */
     text-align: center;
+    display: block;
+    /* Make it a block element */
     letter-spacing: 1px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     /* ↑ Shadow makes text pop! */
 }
-
-/* 
-   📝 I learned about SPAN!
-   Span is an inline element, but I can make it block-level
-   using display: block. This makes it sit on its own line!
-*/
-header h1 span {
-    display: block;
-    /* Make it a block element */
-    font-size: 0.7rem;
-    font-weight: 300;
-    /* Light weight - looks elegant */
-    color: var(--accent-orange-light);
-    /* Peach color - pretty! */
-    letter-spacing: 2px;
-    margin-top: 0.25rem;
-}
-
 /* ---------- NAVIGATION STYLES ---------- */
 /* 
    🧭 NAVIGATION - This is my menu!
