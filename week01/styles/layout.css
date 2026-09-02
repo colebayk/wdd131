@@ -1,0 +1,480 @@
+/* ========================================
+   LAYOUT.CSS - My First CSS File!
+   WDD 131 - Dynamic Web Fundamentals
+   Student: Colebay Kaps Kamanda
+   ======================================== */
+
+/* ----------------------------------------
+   STEP 1: IMPORTING GOOGLE FONTS
+   I learned this from the Google Fonts API
+   video. It lets me use cool fonts without
+   downloading them!
+   ---------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap');
+
+/* ----------------------------------------
+   STEP 2: CSS VARIABLES (My Color Palette)
+   I learned that variables make it easy to
+   change colors everywhere! Instead of typing
+   the same color over and over, I just use
+   the variable name.
+   ---------------------------------------- */
+:root {
+    /* Primary Colors - Dark blue theme */
+    --primary-dark: #1B2A4A;
+    /* Dark navy - I use this for headers */
+    --primary-medium: #2C4A7C;
+    /* Medium blue - for links */
+
+    /* Accent Colors - Warm and friendly */
+    --accent-warm: #D4A373;
+    /* Warm gold - makes things pop! */
+    --accent-warm-light: #F0E2D0;
+    /* Light beige - for hover effects */
+    --accent-coral: #E07A5F;
+    /* Coral red - for special hover states */
+
+    /* Neutral Colors */
+    --text-dark: #2D2D2D;
+    /* Almost black - for body text */
+    --text-medium: #4A4A4A;
+    /* Medium gray - for less important text */
+    --text-light: #6B6B6B;
+    /* Light gray - for subtle text */
+    --background-light: #F7F5F2;
+    /* Off-white - page background */
+    --white: #FFFFFF;
+    /* Pure white - for cards */
+
+    /* Shadows - I learned these give depth! */
+    --shadow-soft: rgba(0, 0, 0, 0.06);
+    /* Very light shadow */
+    --shadow-medium: rgba(0, 0, 0, 0.10);
+    /* Medium shadow */
+
+    /* Fonts */
+    --font-heading: 'Montserrat', sans-serif;
+    /* Clean, bold headings */
+    --font-body: 'Open Sans', sans-serif;
+    /* Easy to read body text */
+}
+
+/* ----------------------------------------
+   STEP 3: RESET STYLES
+   Every browser has different default styles.
+   This "reset" helps me start from zero!
+   ---------------------------------------- */
+* {
+    margin: 0;
+    /* Remove default margins */
+    padding: 0;
+    /* Remove default padding */
+    box-sizing: border-box;
+    /* Makes sizing easier to understand */
+}
+
+/* ----------------------------------------
+   STEP 4: BODY STYLES
+   This is like the "canvas" for my whole page.
+   Everything inside the body uses these defaults.
+   ---------------------------------------- */
+body {
+    font-family: var(--font-body);
+    /* Use Open Sans for everything */
+    background-color: var(--background-light);
+    /* Light gray background */
+    color: var(--text-dark);
+    /* Dark text for readability */
+    line-height: 1.7;
+    /* Space between lines - easier to read */
+    min-height: 100vh;
+    /* Make sure page fills the screen */
+    display: flex;
+    /* I'm learning Flexbox! */
+    flex-direction: column;
+    /* Stack header, main, footer vertically */
+}
+
+/* ----------------------------------------
+   STEP 5: HEADER CONTENT
+   This is the top part of my page.
+   I want it to look important and professional.
+   ---------------------------------------- */
+header {
+    background-color: var(--primary-dark);
+    /* Navy blue background */
+    color: var(--white);
+    /* White text */
+    padding: 2rem 2rem 1rem 2rem;
+    /* Space inside the header */
+    border-bottom: 4px solid var(--accent-warm);
+    /* Gold underline - looks fancy! */
+    box-shadow: 0 4px 12px var(--shadow-medium);
+    /* Shadow makes it "float" */
+}
+
+/* Header title */
+header h1 {
+    font-family: var(--font-heading);
+    /* Use Montserrat for headings */
+    font-size: 2.2rem;
+    /* Big text! */
+    font-weight: 700;
+    /* Bold */
+    text-align: center;
+    /* Center it */
+    letter-spacing: 1px;
+    /* Space between letters */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    /* Shadow effect on text */
+}
+
+/* ----------------------------------------
+   STEP 6: NAVIGATION
+   I'm learning Flexbox for the navigation!
+   This makes the links line up nicely.
+   ---------------------------------------- */
+nav {
+    margin-top: 1.5rem;
+    /* Space above the nav */
+    padding-top: 1rem;
+    /* Space inside */
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    /* Subtle divider line */
+}
+
+/* The unordered list in the nav */
+nav ul {
+    display: flex;
+    /* This is the magic! Flexbox makes items line up */
+    list-style: none;
+    /* Remove the bullet points */
+    gap: 0.5rem;
+    /* Space between each link */
+    flex-wrap: wrap;
+    /* If screen is small, wrap to next line */
+    justify-content: center;
+    /* Center the links */
+}
+
+/* Each link in the navigation */
+nav a {
+    display: block;
+    /* Makes the whole area clickable */
+    padding: 0.6rem 2rem;
+    /* Space inside the button */
+    color: var(--white);
+    /* White text */
+    text-decoration: none;
+    /* Remove the underline */
+    font-family: var(--font-heading);
+    /* Matching heading font */
+    font-weight: 500;
+    /* Medium bold */
+    font-size: 0.95rem;
+    /* Slightly smaller than body text */
+    border-radius: 30px;
+    /* Rounded corners - makes it look like a pill */
+    transition: all 0.3s ease;
+    /* Smooth animation when hovering */
+    background-color: rgba(255, 255, 255, 0.08);
+    /* Slightly transparent background */
+    border: 1px solid transparent;
+    /* Invisible border - but I can use it later */
+}
+
+/* HOVER EFFECT - This is what happens when you mouse over a link! */
+nav a:hover {
+    background-color: var(--accent-warm);
+    /* Gold background */
+    color: var(--primary-dark);
+    /* Dark text so it's readable */
+    transform: translateY(-2px);
+    /* Moves up a little - feels interactive! */
+    box-shadow: 0 4px 16px rgba(212, 163, 115, 0.4);
+    /* Glow effect */
+    border-color: var(--accent-warm);
+    /* Gold border */
+}
+
+/* ----------------------------------------
+   STEP 7: MAIN CONTENT - CSS GRID!
+   This is the most exciting part!
+   I'm using CSS Grid to create columns.
+   ---------------------------------------- */
+main {
+    max-width: 1200px;
+    /* Don't get too wide on big screens */
+    margin: 2.5rem auto;
+    /* Center horizontally with top/bottom space */
+    padding: 0 1.5rem;
+    /* Some padding on sides */
+    display: grid;
+    /* HERE IT IS! I'm using Grid! */
+    grid-template-columns: 2fr 1fr;
+    /* 2 parts main, 1 part side */
+    gap: 2rem;
+    /* Space between columns */
+    flex: 1;
+    /* Push footer to bottom */
+    align-items: start;
+    /* Align cards at the top */
+}
+
+/* ----------------------------------------
+   STEP 8: MAIN CONTENT CARD
+   This is the big card on the left.
+   ---------------------------------------- */
+.card:first-of-type {
+    /* Selects the FIRST card in main */
+    background: var(--white);
+    border-radius: 12px;
+    /* Rounded corners */
+    padding: 2rem 2rem 1.75rem 2rem;
+    box-shadow: 0 2px 16px var(--shadow-soft);
+    border: 1px solid #EDEAE5;
+    /* Very subtle border */
+    transition: box-shadow 0.25s ease;
+    /* Smooth shadow change */
+}
+
+.card:first-of-type:hover {
+    box-shadow: 0 4px 24px var(--shadow-medium);
+    /* Shadow gets bigger on hover */
+}
+
+.card:first-of-type h2 {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    border-bottom: 3px solid var(--accent-warm);
+    /* Gold underline */
+    padding-bottom: 0.6rem;
+    margin-bottom: 1.25rem;
+}
+
+.card:first-of-type p {
+    font-size: 1rem;
+    color: var(--text-medium);
+    line-height: 1.8;
+}
+
+/* ----------------------------------------
+   STEP 9: SIDE CONTENT CARD
+   This is the smaller card on the right.
+   It has similar styling but different content.
+   ---------------------------------------- */
+.card:last-of-type {
+    /* Selects the LAST card in main */
+    background: var(--white);
+    border-radius: 12px;
+    padding: 2rem 2rem 1.75rem 2rem;
+    box-shadow: 0 2px 16px var(--shadow-soft);
+    border: 1px solid #EDEAE5;
+    transition: box-shadow 0.25s ease;
+}
+
+.card:last-of-type:hover {
+    box-shadow: 0 4px 24px var(--shadow-medium);
+}
+
+.card:last-of-type h2 {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--primary-dark);
+    border-bottom: 3px solid var(--accent-warm);
+    padding-bottom: 0.6rem;
+    margin-bottom: 1.25rem;
+}
+
+/* Styling the list in the side card */
+.card:last-of-type ul {
+    list-style: none;
+    /* Remove bullet points */
+    padding: 0;
+}
+
+.card:last-of-type li {
+    padding: 0.6rem 0;
+    /* Space above and below each item */
+    border-bottom: 1px solid #F0EDE8;
+    /* Light separator line */
+}
+
+.card:last-of-type li:last-child {
+    border-bottom: none;
+    /* No line on the last item */
+}
+
+.card:last-of-type a {
+    color: var(--primary-medium);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    padding-left: 0.5rem;
+}
+
+.card:last-of-type a:hover {
+    color: var(--accent-coral);
+    /* Changes to coral on hover */
+    padding-left: 1rem;
+    /* Slides right a bit - feels interactive! */
+}
+
+/* ----------------------------------------
+   STEP 10: FOOTER CONTENT
+   The bottom of the page.
+   I made it match the header for consistency.
+   ---------------------------------------- */
+footer {
+    background-color: var(--primary-dark);
+    color: var(--white);
+    text-align: center;
+    padding: 2rem 1.5rem;
+    margin-top: 1.5rem;
+    border-top: 4px solid var(--accent-warm);
+    /* Gold accent to match header */
+}
+
+footer p:first-of-type {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+}
+
+footer p:last-of-type {
+    font-weight: 300;
+    /* Light weight for less important text */
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    /* Slightly transparent white */
+}
+
+footer span {
+    color: var(--accent-warm);
+    /* Gold color for the year and date */
+}
+
+/* ----------------------------------------
+   STEP 11: RESPONSIVE DESIGN
+   This makes my page work on phones too!
+   This is called "Mobile First" thinking.
+   ---------------------------------------- */
+
+/* For tablets and smaller screens (under 900px) */
+@media (max-width: 900px) {
+    main {
+        grid-template-columns: 1fr;
+        /* One column instead of two! */
+        gap: 1.5rem;
+        padding: 0 1.25rem;
+        margin: 1.75rem auto;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+        /* Smaller on tablets */
+    }
+
+    .card:first-of-type h2,
+    .card:last-of-type h2 {
+        font-size: 1.3rem;
+    }
+}
+
+/* For phones (under 600px) */
+@media (max-width: 600px) {
+    header {
+        padding: 1.25rem 1rem 0.75rem 1rem;
+    }
+
+    header h1 {
+        font-size: 1.4rem;
+        /* Even smaller on phones */
+    }
+
+    /* Stack navigation vertically on phones */
+    nav ul {
+        flex-direction: column;
+        /* Instead of row, stack them! */
+        align-items: stretch;
+        /* Make them full width */
+        width: 100%;
+        gap: 0.25rem;
+    }
+
+    nav a {
+        width: 100%;
+        /* Full width buttons */
+        text-align: center;
+        padding: 0.6rem 1rem;
+        border-radius: 8px;
+        /* Less rounded on small screens */
+        font-size: 0.85rem;
+    }
+
+    /* Less padding on cards for small screens */
+    .card:first-of-type,
+    .card:last-of-type {
+        padding: 1.25rem;
+    }
+
+    .card:first-of-type h2,
+    .card:last-of-type h2 {
+        font-size: 1.1rem;
+    }
+
+    main {
+        padding: 0 0.75rem;
+        margin: 1rem auto;
+        gap: 1rem;
+    }
+
+    footer {
+        padding: 1.25rem 1rem;
+    }
+
+    footer p:first-of-type {
+        font-size: 0.9rem;
+    }
+
+    footer p:last-of-type {
+        font-size: 0.8rem;
+    }
+}
+
+/* ----------------------------------------
+   STEP 12: PRINT STYLES
+   I learned that you can style how the page
+   looks when someone prints it!
+   ---------------------------------------- */
+@media print {
+    header {
+        background: white !important;
+        color: black !important;
+        border-bottom: 2px solid #ccc !important;
+        box-shadow: none !important;
+    }
+
+    nav {
+        display: none !important;
+        /* Don't show navigation when printing */
+    }
+
+    .card:first-of-type,
+    .card:last-of-type {
+        box-shadow: none !important;
+        border: 1px solid #ddd !important;
+        break-inside: avoid;
+        /* Don't split cards across pages */
+    }
+
+    footer {
+        background: white !important;
+        color: black !important;
+        border-top: 2px solid #ccc !important;
+    }
+}
