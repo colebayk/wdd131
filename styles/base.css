@@ -181,7 +181,7 @@ nav a:hover {
     /* Moves up a tiny bit */
     box-shadow: 0 6px 20px rgba(232, 132, 90, 0.4);
     /* Orange glow! */
-    border-color: var(--accent-orange);
+    border-color: var(--accent-gold);
 }
 
 /* 
