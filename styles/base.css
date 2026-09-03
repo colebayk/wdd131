@@ -48,9 +48,9 @@
     /* Purple-tinted shadow */
 
     /* 📝 TYPOGRAPHY - I love these fonts! */
-    --font-heading: 'Merriwathere', serif;
+    --font-heading: 'Tangerine', serif;
     /* Fancy serif for headings */
-    --font-body: 'Roboto', sans-serif;
+    --font-body: 'Inconsolata', sans-serif;
     /* Clean sans-serif for reading */
 }
 
@@ -74,7 +74,7 @@
    Everything inside the body uses these styles.
 */
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Inconsolata', sans-serif;
     /* Use Roboto font */
     background-color: var(--background-cream);
     /* Warm cream background */
@@ -99,7 +99,7 @@ header {
 }
 
 #course-title {
-    font-family: 'Merriweather', serif;
+    font-family: 'Tangerine', serif;
     /* Merriweather for fancy headings */
     font-size: 2rem;
     font-weight: 700;
@@ -204,7 +204,7 @@ article {
 }
 
 article h1 {
-    font-family: 'Merriweather', serif;
+    font-family: 'Tangerine', serif;
     font-size: 2.5rem;
     color: var(--primary-dark);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
@@ -256,7 +256,7 @@ main {
 }
 
 .card h2 {
-    font-family: 'Merriweather', serif;
+    font-family: 'Tangerine', serif;
     font-size: 1.5rem;
     color: var(--primary-dark);
     border-bottom: 3px solid var(--accent-orange);
@@ -305,7 +305,7 @@ main {
    I used dashed border-bottom - looks different and interesting!
 */
 .card:first-of-type h3 {
-    font-family: 'Merriweather', serif;
+    font-family: 'Tangerine', serif;
     font-size: 1.2rem;
     color: var(--primary-medium);
     border-bottom: 2px dashed var(--accent-gold-light);
@@ -443,7 +443,7 @@ footer {
 footer p:first-of-type {
     font-size: 1.1rem;
     font-weight: 700;
-    font-family: 'Merriweather', serif;
+    font-family: 'Tangerine', serif;
     letter-spacing: 1px;
 }
 
