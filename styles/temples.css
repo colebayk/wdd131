@@ -1,0 +1,401 @@
+/* ========================================
+   TEMPLES.CSS - Mobile-First Design with Hamburger Menu
+   WDD 131 - Temples in Africa
+   Student: Colebay Kaps Kamanda
+   📅 Date: September 2026
+   ======================================== */
+
+/* ---------- CSS VARIABLES / Color Schema ---------- */
+:root {
+    /* 🌍 PRIMARY COLORS - African inspired */
+    --primary-dark: #1B3A2B;
+    --primary-medium: #2D5A3D;
+    --primary-light: #4A7C5C;
+
+    /* 🏛️ ACCENT COLORS - Warm African earth tones */
+    --accent-gold: #D4A84B;
+    --accent-gold-light: #F0E4C8;
+    --accent-terracotta: #C67A4E;
+
+    /* 🌿 NEUTRAL COLORS */
+    --text-dark: #1A1A1A;
+    --text-medium: #4A4A4A;
+    --text-light: #F8F9FA;
+    --background-cream: #FAF7F0;
+    --white: #FFFFFF;
+    --shadow: rgba(27, 58, 43, 0.15);
+
+    /* 📝 TYPOGRAPHY */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Lato', sans-serif;
+}
+
+/* ---------- RESET & BASE ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--background-cream);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* ---------- HEADER ---------- */
+header {
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary-medium));
+    padding: 0.75rem 1rem;
+    box-shadow: 0 4px 12px var(--shadow);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+/* Site Title - "Temple Album" */
+#site-title {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-light);
+    letter-spacing: 2px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    flex: 1;
+    text-align: center;
+    order: 2;
+}
+
+/* ---------- HAMBURGER BUTTON ---------- */
+#hamburger-menu {
+    display: block;
+    background: none;
+    border: 2px solid var(--text-light);
+    color: var(--text-light);
+    font-size: 1.8rem;
+    padding: 0.3rem 0.7rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    order: 1;
+    z-index: 100;
+    background-color: rgba(255, 255, 255, 0.05);
+    line-height: 1;
+}
+
+#hamburger-menu:hover {
+    background-color: var(--accent-gold);
+    color: var(--primary-dark);
+    border-color: var(--accent-gold);
+}
+
+#hamburger-menu.active {
+    border-color: var(--accent-gold);
+    color: var(--accent-gold);
+}
+
+/* ---------- NAVIGATION ---------- */
+#primary-nav {
+    width: 100%;
+    order: 3;
+    flex-basis: 100%;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+}
+
+#primary-nav.open {
+    max-height: 500px;
+    opacity: 1;
+    visibility: visible;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 0.25rem;
+    padding: 0.5rem 0 0.25rem 0;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+nav a {
+    display: block;
+    padding: 0.6rem 1.5rem;
+    color: var(--text-light);
+    text-decoration: none;
+    font-family: var(--font-heading);
+    font-weight: 400;
+    font-size: 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid transparent;
+}
+
+nav a:hover {
+    background-color: var(--accent-gold);
+    color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(212, 168, 75, 0.4);
+    border-color: var(--accent-gold);
+}
+
+/* ---------- ARTICLE / TITLE ---------- */
+article {
+    text-align: center;
+    padding: 1.5rem 1rem 0.5rem 1rem;
+}
+
+article h1 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: var(--primary-dark);
+    letter-spacing: 1px;
+    border-bottom: 3px solid var(--accent-gold);
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+/* ---------- MAIN ---------- */
+main {
+    max-width: 1200px;
+    margin: 1rem auto;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+/* ---------- FIGURE / IMAGE CARDS ---------- */
+figure {
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 4px 16px var(--shadow);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+figure:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+}
+
+figure img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+figure figcaption {
+    padding: 0.75rem 1rem;
+    font-family: var(--font-heading);
+    font-weight: 400;
+    font-size: 0.95rem;
+    color: var(--primary-dark);
+    text-align: center;
+    background-color: var(--background-cream);
+    border-top: 2px solid var(--accent-gold-light);
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary-medium));
+    color: var(--text-light);
+    text-align: center;
+    padding: 1.5rem 1rem;
+    margin-top: 2rem;
+    border-top: 4px solid var(--accent-gold);
+}
+
+footer p:first-of-type {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+footer p:last-of-type {
+    margin-top: 0.25rem;
+    font-weight: 300;
+    font-size: 0.85rem;
+    color: var(--accent-gold-light);
+}
+
+/* ---------- RESPONSIVE: TABLET (min-width: 768px) ---------- */
+@media (min-width: 768px) {
+    #hamburger-menu {
+        display: none !important;
+    }
+
+    header {
+        flex-wrap: nowrap;
+        padding: 1rem 2rem;
+    }
+
+    #site-title {
+        flex: 0 1 auto;
+        font-size: 1.8rem;
+        text-align: left;
+        order: 1;
+    }
+
+    #primary-nav {
+        max-height: none !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        overflow: visible !important;
+        width: auto;
+        flex: 1;
+        order: 2;
+        border-top: none;
+        padding: 0;
+    }
+
+    #primary-nav.open {
+        max-height: none !important;
+    }
+
+    nav ul {
+        flex-direction: row;
+        justify-content: flex-end;
+        gap: 0.5rem;
+        padding: 0;
+        border-top: none;
+    }
+
+    nav a {
+        width: auto;
+        padding: 0.5rem 1.5rem;
+        font-size: 1rem;
+        border-radius: 30px;
+        background-color: rgba(255, 255, 255, 0.05);
+    }
+
+    main {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.75rem;
+        padding: 0 1.5rem;
+    }
+
+    article h1 {
+        font-size: 2.5rem;
+    }
+
+    figure img {
+        height: 220px;
+    }
+}
+
+/* ---------- RESPONSIVE: DESKTOP (min-width: 1024px) ---------- */
+@media (min-width: 1024px) {
+    header {
+        padding: 1.25rem 3rem;
+    }
+
+    #site-title {
+        font-size: 2rem;
+    }
+
+    nav ul {
+        gap: 0.75rem;
+    }
+
+    nav a {
+        padding: 0.6rem 2rem;
+        font-size: 1.05rem;
+    }
+
+    main {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+        padding: 0 2rem;
+        margin: 2rem auto;
+    }
+
+    article h1 {
+        font-size: 3rem;
+    }
+
+    figure img {
+        height: 250px;
+    }
+}
+
+/* ---------- RESPONSIVE: LARGE SCREENS (min-width: 1400px) ---------- */
+@media (min-width: 1400px) {
+    main {
+        gap: 2.5rem;
+        max-width: 1400px;
+    }
+
+    figure img {
+        height: 280px;
+    }
+
+    figure figcaption {
+        font-size: 1rem;
+        padding: 0.85rem 1.25rem;
+    }
+}
+
+/* ---------- PRINT STYLES ---------- */
+@media print {
+    #hamburger-menu {
+        display: none !important;
+    }
+
+    header {
+        background: white !important;
+        color: black !important;
+        box-shadow: none !important;
+    }
+
+    #site-title {
+        color: black !important;
+        text-shadow: none !important;
+    }
+
+    #primary-nav {
+        max-height: none !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        overflow: visible !important;
+    }
+
+    nav a {
+        color: black !important;
+        background: none !important;
+    }
+
+    nav a:hover {
+        transform: none !important;
+        box-shadow: none !important;
+    }
+
+    figure {
+        break-inside: avoid;
+        box-shadow: none !important;
+        border: 1px solid #ccc;
+    }
+
+    figure:hover {
+        transform: none !important;
+        box-shadow: none !important;
+    }
+
+    footer {
+        background: white !important;
+        color: black !important;
+        border-top: 2px solid #ccc;
+    }
+}
